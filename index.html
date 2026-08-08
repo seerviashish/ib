@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interview Books</title>
+    <meta
+      name="description"
+      content="Architecture and senior-level interview books — Java, cloud, databases, frameworks and design patterns."
+    />
+    <!-- Content is paid; keep it out of search indexes and archives. -->
+    <meta name="robots" content="noarchive, nosnippet, max-snippet:0" />
+
+    <!--
+      iOS ignores the web app manifest's icons entirely and reads this instead,
+      so "Add to Home Screen" on an iPhone shows a screenshot of the page
+      without it. The manifest link and theme-color are injected by VitePWA;
+      only the Apple-specific tags have to be written by hand.
+    -->
+    <!--
+      Favicons. Without these the browser asks for /favicon.ico, and this SPA
+      answers every unknown path with index.html — so the tab icon was a 200
+      response containing HTML, which browsers quietly discard, leaving the
+      blank default.
+
+      SVG first: a tab is drawn at 16, 32 or 48 device pixels depending on the
+      display, and one vector is sharp at all three where a bitmap is resampled
+      at two of them. The PNGs are the fallback for anything that ignores it.
+
+      `/ib/`, not a relative path. This is an SPA served from one
+      index.html at any depth, so `icons/…` would resolve against the CURRENT
+      route — `/ib/languages/java/icons/…` — and 404 for every reader who did
+      not arrive at the root. Vite substitutes the configured base at build
+      time. (The manifest's own icon paths stay relative on purpose: those
+      resolve against the manifest URL, which is always at the base.)
+    -->
+    <link rel="icon" type="image/svg+xml" href="/ib/icons/favicon.svg" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/ib/icons/favicon-32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/ib/icons/favicon-16.png"
+    />
+    <link rel="apple-touch-icon" href="/ib/icons/icon-192.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Interview Books" />
+    <!-- `black-translucent` would run the page under the status bar, which
+         overlaps the app bar. `black` keeps the bar its own strip. -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <script type="module" crossorigin src="/ib/assets/index-D7J_Nmsd.js" integrity="sha384-sUrSHr9HUo7wF/TSFs7anKsxs0o5CGH/W/x1UuXUYVvAjTMH/7vfUiVv+1yQu5sj"></script>
+    <link rel="stylesheet" crossorigin href="/ib/assets/index-2KaD0GYB.css" integrity="sha384-2+LHhVPYAzH7tBu0kC1Q2+iwdXMkwzrFvTxa2s3Qou4AU87TsmChSCoiNfe9iUZb">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' https://apis.google.com https://www.google.com https://www.gstatic.com https://www.recaptcha.net https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: blob: https://*.googleusercontent.com https://www.gstatic.com https://www.google-analytics.com; connect-src 'self' https://interview-books.web.app https://apis.google.com https://*.googleapis.com https://*.firebaseio.com https://*.firebasedatabase.app https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://www.google.com https://www.recaptcha.net https://www.gstatic.com; frame-src https://apis.google.com https://interview-books.firebaseapp.com https://interview-books.web.app https://www.google.com https://www.recaptcha.net; worker-src 'self' blob:; manifest-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'; upgrade-insecure-requests" />
+  <link rel="manifest" href="/ib/manifest.webmanifest"></head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
