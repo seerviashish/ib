@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Interview Books">
+  <title>Interview Books</title>
+  <!--
+    The same page-with-a-folded-corner as the app icons, minus the text lines:
+    a tab renders this at 16px, where those collapse into a grey smear.
+
+    Vector rather than only PNG because a browser tab is drawn at 16, 32 or 48
+    device pixels depending on the display, and one SVG is sharp at all of them
+    where a fixed bitmap is resampled at two of the three.
+  -->
+  <rect width="64" height="64" rx="14" fill="#0b0b0c" />
+  <!-- Page: the fold is cut by drawing the outline as a single path rather
+       than overlaying a triangle, so it stays correct on any background. -->
+  <path
+    d="M20 12 h16 l10 10 v30 a2 2 0 0 1 -2 2 H20 a2 2 0 0 1 -2 -2 V14 a2 2 0 0 1 2 -2 z"
+    fill="#ffffff"
+  />
+  <!-- The turned corner, in the background colour so it reads as a fold. -->
+  <path d="M36 12 l10 10 h-10 z" fill="#0b0b0c" />
+</svg>
